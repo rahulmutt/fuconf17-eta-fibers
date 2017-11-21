@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+        @font-face {
+            font-family: 'Yanone Kaffeesatz';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Yanone Kaffeesatz Regular'), local('YanoneKaffeesatz-Regular'), url('fonts/YanoneKaffeesatz-Regular.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Droid Serif';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Droid Serif Regular'), local('DroidSerif-Regular'), url('fonts/DroidSerif-Regular.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Droid Serif';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Droid Serif Bold'), local('DroidSerif-Bold'), url('fonts/DroidSerif-Bold.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Droid Serif';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Droid Serif Italic'), local('DroidSerif-Italic'), url('fonts/DroidSerif-Italic.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Ubuntu Mono';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url('fonts/UbuntuMono-Regular.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Ubuntu Mono';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Ubuntu Mono Bold'), local('UbuntuMono-Bold'), url('fonts/UbuntuMono-Bold.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Ubuntu Mono';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Ubuntu Mono Italic'), local('UbuntuMono-Italic'), url('fonts/UbuntuMono-Italic.woff') format('woff');
+        }
+
+        body { font-family: 'Droid Serif'; }
+        h1, h2, h3 {
+            font-family: 'Yanone Kaffeesatz';
+            font-weight: normal;
+        }
+        span.big-image img {
+            width: 50%;
+            height: 50%;
+        }
+        span.bigger-image img {
+            width: 90%;
+            height: 90%;
+        }
+        .big-code {
+            font-size: 20px;
+        }
+        .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono';}
+        .remark-slide-content{ background: #32bebe; color: #ffffff; }
+        .warning { color: white; background: #f44336; }
+        .ok { color: white; background: green; }
+        .remark-slide-content ul { margin-top: 50px;}
+        .remark-slide-content ul li { margin: 0 0 50px 0; font-size: 30px;}
+        .remark-slide-content img { width: 20%}
+        .remark-code-line-highlighted{ background-color: rgba(255, 255, 255, 0.2);}
+        code.haskell.hljs.remark-code{
+          border-radius: 6px;
+          padding: 30px;
+          box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+        }
+        code.scala.hljs.remark-code{
+          border-radius: 6px;
+          padding: 30px;
+          box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+        }
+        code.java.hljs.remark-code{
+          border-radius: 6px;
+          padding: 30px;
+          box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+        }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+![Eta Logo](white.png)
+# Eta Fibers
+##### Towards Better Concurrency on the JVM
+
+#### Rahul Muttineni
+#### CTO of TypeLead
+
+---
+
+# Project Overview
+
+- HSoC Project - Edward Kmett
+- TypeLead w/ Jyothsna
+- Techstars NYC '17
+
+---
+
+# Eta Overview
+
+- Pure, lazy, statically typed functional language
+- Fork of GHC
+- Compiles Haskell packages out of the box
+- Strongly typed FFI
+- Focused on user experience & industrial use
+
+---
+
+class: center, middle
+
+# "Concurrency refers to the ability of different parts or units of a program, algorithm, or problem to be executed out-of-order or in partial order, without affecting the final outcome." -Wikipedia
+
+---
+
+# Threading
+
+--
+
+- OS Threads
+
+--
+
+- Green Threads
+
+--
+
+- Fibers
+
+---
+
+layout: true
+
+# OS Threads
+
+---
+
+### .center[Interleaving multiple-operations]
+
+.big-image[.center[![Threads](multiplex.png)]]
+.center[[1]]
+
+---
+
+## - Scheduled by operating system
+
+--
+
+## - Expensive to create & context switch
+
+--
+
+## - Available in nearly all languages
+
+--
+
+## - Requires synchronization
+
+---
+
+layout: false
+
+# Multiplexed Threads
+
+- M to N threading model
+- Implement asynchronous/non-blocking architectures
+- Still need to deal with synchronization
+
+---
+
+
+# Green Threads
+
+--
+
+## - Preemptive
+
+--
+
+## - Scheduled by application runtime
+
+---
+
+# Fibers
+
+--
+
+## - Cooperative
+
+--
+
+## - Scheduled by user
+
+---
+
+# Alternative: Event Loop
+
+--
+
+## - Netty/NIO, Node.js
+
+--
+
+## - Single Thread
+
+--
+
+## - High Performance
+
+--
+
+## - No need to worry about synchronization
+
+---
+
+class: center, middle
+
+# But wait!
+
+---
+
+# .center[Callback Hell [2]]
+
+```scala
+def countWordOccurrencesAsync(urls: List[String], keyword: String
+   ,successHandler: (List[(String, Int)]) => Unit
+   ,errorHandler: (Throwable) => Unit): Unit = {
+  var resultsAccumulator = List[(String, Int)]()
+  var isUrlCompleted = urls.foldLeft(HashMap[String, Boolean]())
+    { (acc, url) => acc.updated(url, false) }
+  urls map { url =>
+    fetchUrlAsync(url, successHandler = { html =>
+        parseHtmlToDOMAsync(html, successHandler = { dom =>
+            countWordOccurrencesInDOMAsync(dom, keyword
+                ,successHandler = { count =>
+                    resultsAccumulator = (url, count) :: resultsAccumulator
+                    isUrlCompleted = isUrlCompleted.updated(url, true)
+                    val allDone = isUrlCompleted
+                                    .map { case(key, value) => value }
+                                    .reduce { (a, b) => a && b }
+                    if (allDone) {
+                    successHandler(resultsAccumulator)
+                    }
+              }, errorHandler)
+          }, errorHandler)
+      }, errorHandler)
+  }
+}
+```
+
+---
+
+# .center[Futures/Promises [2]]
+
+```scala
+import scala.concurrent.{ Future, Promise }
+import scala.concurrent.ExecutionContext.Implicits.global
+
+def countWordOccurrences(urls: List[String], keyword: String):
+  Future[List[(String, Int)]] = {
+  val countKeywordOccurrencesInDOM = countWordOccurrencesInDOM(_: DOM, keyword)
+  val listOfFutures = urls
+    .map { url =>
+           fetchUrl(url)
+             .flatMap(parseHtmlToDOM)
+             .flatMap(countKeywordOccurrencesInDOM)
+             .map { count => (url, count) } }
+  Future.sequence(listOfFutures)
+}
+```
+
+---
+
+# .center[Async/Await [2]]
+
+```scala
+import scala.concurrent.{ Future, Promise }
+import scala.async.Async.{ async, await }
+import scala.concurrent.ExecutionContext.Implicits.global
+
+def countWordOccurrences(urls: List[String], keyword: String):
+  Future[List[(String, Int)]] = {
+  val listOfFutures = urls
+    .map { url => async {
+      val html = await { fetchUrl(url) }
+      val dom = await { parseHtmlToDOM(html) }
+      val count = await { countWordOccurrencesInDOM(dom, keyword) }
+      (url, count)
+    }
+  }
+  Future.sequence(listOfFutures)
+}
+```
+
+---
+
+class: center, middle
+
+# But wait!
+
+---
+
+# .center[Not First-Class]
+
+```scala
+val await1: List[Int] = await(futureMethod(id))
+
+val mapped = await1.map(entry => {
+  (pq.id, await(anotherFutureMethod(entry.id)))
+})
+```
+
+## - Does not compile.
+## - Lots of restrictions on `async` and `await`.
+
+---
+
+# .center[Unexpected Semantics [3]]
+
+```scala
+def slowCalcFuture: Future[Int] = ...
+def combined: Future[Int] = async {
+  await(slowCalcFuture) + await(slowCalcFuture)
+}
+```
+
+## .center[is *not* the same as]
+
+```scala
+def combined: Future[Int] = async {
+  val future1 = slowCalcFuture
+  val future2 = slowCalcFuture
+  await(future1) + await(future2)
+}
+```
+
+---
+
+# What We Want
+
+- First-class, composeable abstraction
+- Easily debuggable (i.e. Stacktraces)
+- Good Performance
+
+---
+
+# Why We Want It?
+
+- Re-usable code
+- Fast iteration
+- Simpler code
+
+---
+
+layout: true
+
+# Introducing Sequenceables (Monads)
+
+---
+
+- General-purpose abstraction for handling computations that can be sequenced
+
+- Programmable semicolons
+
+```java
+File file = getFileFromDB("someFile");
+int size = file.size();
+System.out.println("Size of someFile is " + size + ".");
+```
+
+---
+
+- Based in Category Theory
+  - The factory for principled, powerful, re-usable abstractions
+
+- Using monads does *NOT* require a PhD
+
+---
+
+## Dispelling Myths
+
+- Monads are not *impure*
+
+- Monads have nothing to do with side-effects
+  - Popular way to model them in a pure FP language.
+
+---
+
+class: big-code
+
+## Definition
+
+```haskell
+class Monad m where
+  return :: a -> m a
+  -- Called `bind`
+  -- Think of callbacks
+  (>>=) :: m a -> (a -> m b) -> m b
+```
+
+---
+
+layout: true
+
+# .center[The IO Monad]
+
+---
+
+# .center[.middle[An IO action is a description of a computation that can return a value of type `A`.]]
+
+---
+
+## Approximation
+
+```haskell
+type IO' a = () -> a
+```
+
+A function in imperative languages that takes a void argument and returns a value.
+
+
+---
+
+## Almost Exact
+
+```haskell
+type IO a = RealWorld -> (a, RealWorld)
+```
+
+The IO monad is not impure because no two values of `RealWorld` can ever
+be the same and user cannot construct values of type `RealWorld`.
+
+---
+
+## Example: Downloading & Processing Music Files
+
+```haskell
+
+newtype MusicFile = MusicFile ByteString
+
+downloadMusicFile :: String -> IO MusicFile
+
+mergeMusicFilesTo :: FilePath -> MusicFile -> MusicFile -> IO ()
+```
+
+---
+
+## Example: Code
+
+```haskell
+-- downloadMusicFile "1.mp3" :: IO MusicFile
+-- downloadMusicFile "2.mp3" :: IO MusicFile
+
+downloadAndMergeFiles :: IO ()
+downloadAndMergeFiles =
+  downloadMusicFile "1.mp3" >>= (\song1 ->
+    downloadMusicFile "2.mp3" >>= (\song2 ->
+      mergeMusicFilesTo "merged.mp3" song1 song2))
+
+```
+
+---
+
+## `do` Notation
+
+```haskell
+downloadAndMergeFiles :: IO ()
+downloadAndMergeFiles = do
+  song1 <- downloadMusicFile "1.mp3"
+  song2 <- downloadMusicFile "2.mp3"
+  mergeMusicFilesTo "merged.mp3" song1 song2
+```
+
+---
+
+layout: true
+
+# Transient Inspiration
+
+---
+
+.bigger-image[.center[![Alberto](alberto.png)]]
+
+---
+
+- Alberto Gomez Corona (@agocorona)
+- Reactive application framework
+  - https://github.com/transient-haskell/transient
+  - https://github.com/transient-haskell/transient-universe
+- Interesting bind implementation
+
+---
+
+## Example
+
+```haskell
+wormhole node $ do
+  putStrLn "Hello World in Node!"
+  pid <- grabProcessId
+  teleport
+  putStrLn "Hello World in Current Server!"
+  putStrLn $ "Process Id in Node: " ++ show pid
+```
+
+---
+
+layout: true
+
+# The Fiber Monad
+
+---
+
+- A monad for working with suspendable computations.
+- Similar to the IO monad
+- The bind implementation maintains a continuation stack.
+
+---
+
+## Monadic Interface
+
+```haskell
+data Fiber a
+
+instance Monad Fiber where
+  return :: a -> Fiber a
+  return = ?
+
+  (>>=) :: Fiber a -> (a -> Fiber b) -> Fiber b
+  (>>=) = ?
+```
+
+---
+
+## Primitive Operations
+
+```haskell
+-- Tranform output of Fiber
+instance Functor Fiber where
+  fmap :: (a -> b) -> Fiber a -> Fiber b
+
+-- Parallelize Fibers
+instance Applicative Fiber where
+  (<*>) :: Fiber (a -> b) -> Fiber a -> Fiber b
+
+-- Handle Fiber failures
+instance Alternative Fiber where
+  (<|>) :: Fiber a -> Fiber a -> Fiber a
+
+-- Suspend the fiber and immediately add to global run queue.
+yield :: Fiber a
+
+-- Suspend the fiber.
+block :: Fiber a
+```
+
+---
+
+## Spawning
+
+```haskell
+forkFiber :: Fiber () -> IO ThreadId
+```
+
+---
+
+## MVars
+
+### Single-element bounded channel
+
+### Non-blocking operations
+
+```haskell
+takeMVar :: MVar a -> Fiber a
+putMVar  :: MVar a -> a -> Fiber ()
+```
+
+---
+
+## Example: Ping Pong
+
+```haskell
+import Control.Concurrent.Fiber
+import qualified Control.Concurrent.MVar as MVar
+
+pingpong msg sourceChan sinkChan = go 0
+   where go n = do
+           takeMVar sourceChan
+           liftIO $ putStrLn $ show n ++ ": " ++ msg
+           putMVar sinkChan ()
+           go (n + 1)
+```
+
+---
+
+## Example: Ping Pong
+
+```haskell
+main :: IO ()
+main = do
+  setNumCapabilities 1
+  pingChan <- newEmptyMVar
+  pongChan <- newEmptyMVar
+  forkFiber $ pingpong "Ping" pingChan pongChan
+  forkFiber $ pingpong "Pong" pongChan pingChan
+  MVar.putMVar pingChan ()
+  threadDelay 10000000
+  return ()
+```
+
+---
+
+layout: false
+class: center, middle
+
+# Code asynchronous like it's synchronous!
+
+---
+
+class: center, middle
+
+# Fibers are the fundamental primitives with which you can implement efficient concurrency mechanisms.
+
+---
+
+# Fiber Applications
+
+- Actor model
+- Reactor model (Join Calculus)
+- Reactive Systems
+- Non-blocking IO applications
+- Simple asychronous tasks
+
+---
+
+# Future Development
+
+- Convert callback-based Java APIs to Fibered APIs
+- Support `java.util.concurrent.Future`
+- Support Software Transactional Memory
+- Catch exceptions
+
+---
+
+# Future Development (Continued)
+
+- ApplicativeDo - automated parallelization
+- Handle blocking calls
+- Distributed Fibers/Fault-Tolerance
+- Incoporate more of `transient` APIs.
+
+---
+
+# Fiber Tooling
+
+- Java agent to capture Fiber stacktraces.
+
+---
+
+# eta-fibers-dev
+
+- Package that supports experimental fiber functionality
+
+- Extends runtime with foreign primops
+
+- Eventually include in `base`
+
+```haskell
+git clone https://github.com/rahulmutt/eta-fibers-dev
+cd eta-fibers-dev
+etlas install
+```
+
+---
+
+# Analyzing Fiber Performance
+
+- Eta Runtime
+- HotSpot JIT Compiler
+- Thread-Ring Benchmark
+
+---
+
+# Eta Runtime
+
+- Capabilities
+- Thread State Objects (TSOs)
+- Global Run Queue
+  - Work-stealing deque
+- Configurable
+
+---
+
+# JIT Compilation
+- Bytecodes Interpreted at Runtime
+- Hot methods optimized & inlined
+- Deoptimization
+- C1/C2 compilers
+
+---
+
+layout: true
+
+# JIT Optimizations
+
+---
+
+## Null-check Elimination
+
+```java
+if (x == null) x.method();
+```
+
+to
+
+```java
+// Uncommon trap
+x.method();
+```
+
+---
+
+## Branch Prediction (Unconditional Branch)
+
+```java
+if (x > 0) {
+  // Only branch reached so far in program execution
+  ..codeA
+} else {
+  ..codeB
+}
+```
+
+to
+
+```java
+// Uncommon trap -> deoptimize -> ..codeB
+..codeA
+```
+
+---
+
+## Branch Prediction (Frequency)
+
+```java
+if (x > 0) {
+  // Frequent branch
+  ..codeA
+} else {
+  ..codeB
+}
+```
+
+The assembly instructions generated by JIT will be rearranged so that there is no
+branch instruction to reach the most taken branch.
+
+---
+
+## Inlining
+### Samples (platform dependent):
+- -XX:MaxTrivialSize = 6
+- -XX:MaxInlineSize  = 35
+- -XX:FreqInlineSize = 325
+
+```haskell
+java -XX:+UnlockDiagnosticVMOptions -XX:+PrintFlagsFinal | grep InlineSize
+```
+
+---
+
+## Type Profiling
+
+```java
+x.interfaceMethod();
+```
+
+OR
+
+```java
+x.virtualMethod();
+```
+
+to
+
+```java
+// if program execution only uses one type of object at callsite so far
+// Uncommon trap -> deoptimize -> original callsite
+<inline method definition>;
+```
+
+---
+
+layout: false
+
+# Thread-Ring Benchmark
+
+- Measures context switch time
+- Ring of threads of size M = 503
+- Message of value N = 1,000,000
+- Message is passed around the ring
+    - Decreases until 0
+
+---
+
+# fiber-test
+
+https://github.com/rahulmutt/fiber-test
+
+- Java Microbenchmarking Harness (JMH)
+- Compares various JVM frameworks for lightweight threads
+
+---
+
+# Result
+
+```scala
+Benchmark                                  Mode  Cnt     Score     Error  Units
+AkkaActorRingBenchmark.ringBenchmark       avgt   50   657.889 ±  23.338  ms/op
+EtaFiberRingBenchmark.ringBenchmark        avgt   50   949.181 ±  51.674  ms/op
+JavaThreadRingBenchmark.ringBenchmark      avgt   50  9803.600 ± 177.944  ms/op
+QuasarFiberRingBenchmark.ringBenchmark     avgt   50   950.884 ±  98.654  ms/op
+VertxRingBenchmark.ringBenchmark           avgt   50  9250.267 ± 157.681  ms/op
+```
+
+---
+
+# Akka Result: Deeper Look
+
+```scala
+# Warmup Iteration   1: 6602.718 ms/op
+# Warmup Iteration   2: 1181.213 ms/op
+# Warmup Iteration   3: 2119.094 ms/op
+# Warmup Iteration   4: 815.806 ms/op
+# Warmup Iteration   5: 690.487 ms/op
+Iteration   1: 668.968 ms/op
+Iteration   2: 696.191 ms/op
+Iteration   3: 771.384 ms/op
+Iteration   4: 632.746 ms/op
+Iteration   5: 680.259 ms/op
+Iteration   6: 651.493 ms/op
+Iteration   7: 734.836 ms/op
+Iteration   8: 716.762 ms/op
+Iteration   9: 660.810 ms/op
+Iteration  10: 706.976 ms/op
+```
+
+---
+
+# Eta Fibers Result: Deeper Look
+
+```scala
+# Warmup Iteration   1: 2639.040 ms/op
+# Warmup Iteration   2: 1201.496 ms/op
+# Warmup Iteration   3: 901.661 ms/op
+# Warmup Iteration   4: 918.652 ms/op
+# Warmup Iteration   5: 936.112 ms/op
+Iteration   1: 928.640 ms/op
+Iteration   2: 902.726 ms/op
+Iteration   3: 881.352 ms/op
+Iteration   4: 836.043 ms/op
+Iteration   5: 838.110 ms/op
+Iteration   6: 816.391 ms/op
+Iteration   7: 819.018 ms/op
+Iteration   8: 805.761 ms/op
+Iteration   9: 820.510 ms/op
+Iteration  10: 816.617 ms/op
+```
+
+---
+
+# Print Inlining
+
+```haskell
+java -XX:+UnlockDiagnosticVMOptions -XX:PrintInlining -XX:PrintCompilation ...
+
+@ 22   main.Main$$wa3_sD3P::enter (222 bytes)   inline (hot)
+    \-> TypeProfile (42865/42865 counts) = main/Main$$wa3_sD3P
+    @ 102   eta_fibers_dev.control.concurrent.fiber.MVar::$wa (16 bytes)   inline (hot)
+    @ 6   eta_fibers_dev.control.concurrent.fiber.MVar$a1_s4AQ::<init> (15 bytes)   inline (hot)
+    @ 12   eta_fibers_dev.control.concurrent.fiber.MVar$a1_s4AQ::applyV (134 bytes)   inline (hot)
+        @ 9   eta.runtime.concurrent.Concurrent::tryPutMVar (14 bytes)   inline (hot)
+        @ 2   eta.runtime.concurrent.MVar::tryPut (7 bytes)   inline (hot)
+            @ 3   eta.runtime.concurrent.MVar::casValue (29 bytes)   inline (hot)
+            @ 15   sun.misc.Unsafe::compareAndSwapObject (0 bytes)   (intrinsic)
+        @ 24   eta.fibers.PrimOps::awakenMVarListeners (29 bytes)   inline (hot)
+        @ 1   eta.runtime.concurrent.MVar::getListeners (19 bytes)   inline (hot)
+            @ 8   eta.runtime.concurrent.MVar::casTop (29 bytes)   inline (hot)
+            @ 15   sun.misc.Unsafe::compareAndSwapObject (0 bytes)   (intrinsic)
+        @ 10   eta.runtime.concurrent.Concurrent::pushToGlobalRunQueue (11 bytes)   inline (hot)
+    @ 108   eta.fibers.PrimOps::popNextC (8 bytes)   inline (hot)
+    @ 4   eta.runtime.stg.TSO::popCont (17 bytes)   inline (hot)
+    @ 116   eta.fibers.PrimOps::setCurrentC (9 bytes)   inline (hot)
+    @ 129   eta.fibers.PrimOps::setCurrentC (9 bytes)   inline (hot)
+    @ 137   eta.fibers.PrimOps::pushNextC (9 bytes)   inline (hot)
+    @ 5   eta.runtime.stg.TSO::pushCont (38 bytes)   inline (hot)
+```
+---
+
+# Decompiling
+
+```java
+public static class $wa3_sD3P extends Function2 {
+    public final Closure enter(StgContext paramStgContext)
+    {
+        Izh localIzh1;
+        Closure localClosure5;
+        for (int i = paramStgContext.I1;; i = ((Izh)localClosure5).x1) {
+            PrimOps.setCurrentC(paramStgContext, localsat_sD40);
+            ...
+            localIzh1 = new Izh(i);
+            PrimOps.pushNextC(paramStgContext, localsat_sD4R);
+            int j = i - 1;
+            Izh localIzh2 = new Izh(j);
+            ...
+            if (i < 1) break;
+            PrimOps.setCurrentC(paramStgContext, this.x3);
+            PrimOps.pushNextC(paramStgContext, this.x5);
+            ...
+            PrimOps.setCurrentC(paramStgContext, localAp2Upd);
+            localClosure5 = localClosure3.evaluate(paramStgContext);
+        }
+        ...
+    }
+}
+```
+
+
+---
+
+layout: true
+class: center, middle
+
+# Conclusion
+
+---
+
+# Eta Fibers are Composeable & Performant
+
+---
+
+
+# Lazy FP on the JVM is Fast!
+
+---
+
+layout: false
+
+# Links
+
+- http://eta-lang.org/
+- https://tour.eta-lang.org/
+- https://github.com/rahulmutt/eta-fibers-dev
+
+---
+
+# Community
+
+## Get Involved!
+
+- Gitter: https://gitter.im/typelead/eta
+- Twitter: @eta_lang
+- Google Group: https://groups.google.com/forum/#!forum/eta-discuss
+
+---
+
+# References
+
+[1] https://en.wikipedia.org/wiki/Thread_(computing)#/media/File:Multithreaded_process.svg
+
+[2] https://codewords.recurse.com/issues/two/an-introduction-to-reactive-programming
+
+[3] https://stackoverflow.com/questions/20092068/scala-async-await-and-parallelization
+
+---
+
+class: center, middle
+layout: false
+
+# Thank You!
+
+---
+    </textarea>
+    <script src="js/remark-latest.min.js">
+    </script>
+    <script>
+     var slideshow = remark.create({
+         highlightLines: true,
+         highlightStyle: 'atom-one-dark'
+     });
+    </script>
+  </body>
+</html>

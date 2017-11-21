@@ -1,0 +1,1011 @@
+java -server -XX:+TieredCompilation -XX:+AggressiveOpts -jar "./target/fiber-test.jar" -jvmArgsAppend "-DworkerCount=503 -DringSize=1000000 -javaagent:./target/agents/quasar-core.jar" -wi 5 -i 10 -bm avgt -tu ms -f 5 ".*RingBenchmark.*"
+# JMH version: 1.19
+# VM version: JDK 1.8.0_102, VM 25.102-b14
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java
+# VM options: -XX:+TieredCompilation -XX:+AggressiveOpts -DworkerCount=503 -DringSize=1000000 -javaagent:./target/agents/quasar-core.jar
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.vy.fibertest.AkkaActorRingBenchmark.ringBenchmark
+
+# Run progress: 0.00% complete, ETA 00:10:00
+# Fork: 1 of 5
+objc[51038]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 6602.718 ms/op
+# Warmup Iteration   2: 1181.213 ms/op
+# Warmup Iteration   3: 2119.094 ms/op
+# Warmup Iteration   4: 815.806 ms/op
+# Warmup Iteration   5: 690.487 ms/op
+Iteration   1: 668.968 ms/op
+Iteration   2: 696.191 ms/op
+Iteration   3: 771.384 ms/op
+Iteration   4: 632.746 ms/op
+Iteration   5: 680.259 ms/op
+Iteration   6: 651.493 ms/op
+Iteration   7: 734.836 ms/op
+Iteration   8: 716.762 ms/op
+Iteration   9: 660.810 ms/op
+Iteration  10: 706.976 ms/op
+
+# Run progress: 2.50% complete, ETA 00:18:06
+# Fork: 2 of 5
+objc[51039]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 5898.351 ms/op
+# Warmup Iteration   2: 1089.820 ms/op
+# Warmup Iteration   3: 1072.832 ms/op
+# Warmup Iteration   4: 771.522 ms/op
+# Warmup Iteration   5: 811.331 ms/op
+Iteration   1: 725.562 ms/op
+Iteration   2: 694.595 ms/op
+Iteration   3: 727.731 ms/op
+Iteration   4: 690.701 ms/op
+Iteration   5: 751.106 ms/op
+Iteration   6: 666.704 ms/op
+Iteration   7: 643.758 ms/op
+Iteration   8: 684.948 ms/op
+Iteration   9: 692.577 ms/op
+Iteration  10: 641.254 ms/op
+
+# Run progress: 5.00% complete, ETA 00:17:16
+# Fork: 3 of 5
+objc[51040]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 6114.135 ms/op
+# Warmup Iteration   2: 1192.504 ms/op
+# Warmup Iteration   3: 1016.244 ms/op
+# Warmup Iteration   4: 1034.249 ms/op
+# Warmup Iteration   5: 946.159 ms/op
+Iteration   1: 623.841 ms/op
+Iteration   2: 763.493 ms/op
+Iteration   3: 613.146 ms/op
+Iteration   4: 663.010 ms/op
+Iteration   5: 683.433 ms/op
+Iteration   6: 676.003 ms/op
+Iteration   7: 607.401 ms/op
+Iteration   8: 593.787 ms/op
+Iteration   9: 630.791 ms/op
+Iteration  10: 660.335 ms/op
+
+# Run progress: 7.50% complete, ETA 00:16:23
+# Fork: 4 of 5
+objc[51049]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 5418.824 ms/op
+# Warmup Iteration   2: 1077.738 ms/op
+# Warmup Iteration   3: 869.631 ms/op
+# Warmup Iteration   4: 594.178 ms/op
+# Warmup Iteration   5: 634.176 ms/op
+Iteration   1: 616.775 ms/op
+Iteration   2: 675.205 ms/op
+Iteration   3: 636.819 ms/op
+Iteration   4: 608.040 ms/op
+Iteration   5: 586.380 ms/op
+Iteration   6: 587.222 ms/op
+Iteration   7: 620.610 ms/op
+Iteration   8: 638.039 ms/op
+Iteration   9: 611.841 ms/op
+Iteration  10: 572.516 ms/op
+
+# Run progress: 10.00% complete, ETA 00:15:42
+# Fork: 5 of 5
+objc[51060]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 5540.163 ms/op
+# Warmup Iteration   2: 2008.156 ms/op
+# Warmup Iteration   3: 773.148 ms/op
+# Warmup Iteration   4: 620.275 ms/op
+# Warmup Iteration   5: 680.884 ms/op
+Iteration   1: 652.726 ms/op
+Iteration   2: 600.567 ms/op
+Iteration   3: 639.660 ms/op
+Iteration   4: 674.336 ms/op
+Iteration   5: 600.187 ms/op
+Iteration   6: 623.030 ms/op
+Iteration   7: 661.699 ms/op
+Iteration   8: 631.312 ms/op
+Iteration   9: 661.238 ms/op
+Iteration  10: 641.648 ms/op
+
+
+Result "com.github.vy.fibertest.AkkaActorRingBenchmark.ringBenchmark":
+  657.889 ±(99.9%) 23.338 ms/op [Average]
+  (min, avg, max) = (572.516, 657.889, 771.384), stdev = 47.144
+  CI (99.9%): [634.551, 681.227] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_102, VM 25.102-b14
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java
+# VM options: -XX:+TieredCompilation -XX:+AggressiveOpts -DworkerCount=503 -DringSize=1000000 -javaagent:./target/agents/quasar-core.jar
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.vy.fibertest.EtaFiberRingBenchmark.ringBenchmark
+
+# Run progress: 12.50% complete, ETA 00:15:10
+# Fork: 1 of 5
+objc[51061]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 2364.250 ms/op
+# Warmup Iteration   2: 1333.637 ms/op
+# Warmup Iteration   3: 1058.863 ms/op
+# Warmup Iteration   4: 1044.962 ms/op
+# Warmup Iteration   5: 1015.188 ms/op
+Iteration   1: 1019.859 ms/op
+Iteration   2: 1049.104 ms/op
+Iteration   3: 1033.570 ms/op
+Iteration   4: 1006.358 ms/op
+Iteration   5: 1007.362 ms/op
+Iteration   6: 1006.366 ms/op
+Iteration   7: 1017.962 ms/op
+Iteration   8: 993.592 ms/op
+Iteration   9: 1007.355 ms/op
+Iteration  10: 994.894 ms/op
+
+# Run progress: 15.00% complete, ETA 00:14:15
+# Fork: 2 of 5
+objc[51062]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 2339.744 ms/op
+# Warmup Iteration   2: 1009.734 ms/op
+# Warmup Iteration   3: 922.814 ms/op
+# Warmup Iteration   4: 1261.496 ms/op
+# Warmup Iteration   5: 1053.266 ms/op
+Iteration   1: 1044.295 ms/op
+Iteration   2: 1064.826 ms/op
+Iteration   3: 1055.094 ms/op
+Iteration   4: 1094.487 ms/op
+Iteration   5: 1069.658 ms/op
+Iteration   6: 1129.869 ms/op
+Iteration   7: 1085.883 ms/op
+Iteration   8: 1127.147 ms/op
+Iteration   9: 1089.220 ms/op
+Iteration  10: 1127.745 ms/op
+
+# Run progress: 17.50% complete, ETA 00:13:22
+# Fork: 3 of 5
+objc[51069]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 2639.040 ms/op
+# Warmup Iteration   2: 1201.496 ms/op
+# Warmup Iteration   3: 901.661 ms/op
+# Warmup Iteration   4: 918.652 ms/op
+# Warmup Iteration   5: 936.112 ms/op
+Iteration   1: 928.640 ms/op
+Iteration   2: 902.726 ms/op
+Iteration   3: 881.352 ms/op
+Iteration   4: 836.043 ms/op
+Iteration   5: 838.110 ms/op
+Iteration   6: 816.391 ms/op
+Iteration   7: 819.018 ms/op
+Iteration   8: 805.761 ms/op
+Iteration   9: 820.510 ms/op
+Iteration  10: 816.617 ms/op
+
+# Run progress: 20.00% complete, ETA 00:13:10
+# Fork: 4 of 5
+objc[51070]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 2382.219 ms/op
+# Warmup Iteration   2: 925.435 ms/op
+# Warmup Iteration   3: 852.755 ms/op
+# Warmup Iteration   4: 809.019 ms/op
+# Warmup Iteration   5: 814.440 ms/op
+Iteration   1: 820.280 ms/op
+Iteration   2: 815.441 ms/op
+Iteration   3: 816.873 ms/op
+Iteration   4: 862.580 ms/op
+Iteration   5: 831.387 ms/op
+Iteration   6: 819.349 ms/op
+Iteration   7: 815.361 ms/op
+Iteration   8: 811.057 ms/op
+Iteration   9: 832.070 ms/op
+Iteration  10: 816.054 ms/op
+
+# Run progress: 22.50% complete, ETA 00:12:51
+# Fork: 5 of 5
+objc[51073]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 2292.168 ms/op
+# Warmup Iteration   2: 1014.243 ms/op
+# Warmup Iteration   3: 1027.616 ms/op
+# Warmup Iteration   4: 1047.872 ms/op
+# Warmup Iteration   5: 1003.679 ms/op
+Iteration   1: 972.706 ms/op
+Iteration   2: 971.167 ms/op
+Iteration   3: 970.487 ms/op
+Iteration   4: 978.172 ms/op
+Iteration   5: 974.934 ms/op
+Iteration   6: 972.644 ms/op
+Iteration   7: 971.638 ms/op
+Iteration   8: 974.307 ms/op
+Iteration   9: 969.980 ms/op
+Iteration  10: 972.737 ms/op
+
+
+Result "com.github.vy.fibertest.EtaFiberRingBenchmark.ringBenchmark":
+  949.181 ±(99.9%) 51.674 ms/op [Average]
+  (min, avg, max) = (805.761, 949.181, 1129.869), stdev = 104.383
+  CI (99.9%): [897.507, 1000.854] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_102, VM 25.102-b14
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java
+# VM options: -XX:+TieredCompilation -XX:+AggressiveOpts -DworkerCount=503 -DringSize=1000000 -javaagent:./target/agents/quasar-core.jar
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.vy.fibertest.JavaThreadRingBenchmark.ringBenchmark
+
+# Run progress: 25.00% complete, ETA 00:12:35
+# Fork: 1 of 5
+objc[51074]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 9491.319 ms/op
+# Warmup Iteration   2: 9730.213 ms/op
+# Warmup Iteration   3: 9814.749 ms/op
+# Warmup Iteration   4: 9677.662 ms/op
+# Warmup Iteration   5: 9566.093 ms/op
+Iteration   1: 9191.747 ms/op
+Iteration   2: 9589.914 ms/op
+Iteration   3: 9511.260 ms/op
+Iteration   4: 9668.427 ms/op
+Iteration   5: 9738.971 ms/op
+Iteration   6: 9742.684 ms/op
+Iteration   7: 9668.332 ms/op
+Iteration   8: 9501.476 ms/op
+Iteration   9: 8971.584 ms/op
+Iteration  10: 9726.809 ms/op
+
+# Run progress: 27.50% complete, ETA 00:17:25
+# Fork: 2 of 5
+objc[51075]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 9463.624 ms/op
+# Warmup Iteration   2: 9683.504 ms/op
+# Warmup Iteration   3: 9873.424 ms/op
+# Warmup Iteration   4: 9460.183 ms/op
+# Warmup Iteration   5: 9512.329 ms/op
+Iteration   1: 9729.641 ms/op
+Iteration   2: 9572.404 ms/op
+Iteration   3: 9659.010 ms/op
+Iteration   4: 10046.480 ms/op
+Iteration   5: 9803.261 ms/op
+Iteration   6: 10340.746 ms/op
+Iteration   7: 10861.218 ms/op
+Iteration   8: 9825.907 ms/op
+Iteration   9: 9957.437 ms/op
+Iteration  10: 9727.724 ms/op
+
+# Run progress: 30.00% complete, ETA 00:21:12
+# Fork: 3 of 5
+objc[51089]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 10009.053 ms/op
+# Warmup Iteration   2: 10645.358 ms/op
+# Warmup Iteration   3: 10596.400 ms/op
+# Warmup Iteration   4: 9444.625 ms/op
+# Warmup Iteration   5: 10155.178 ms/op
+Iteration   1: 9965.680 ms/op
+Iteration   2: 9568.318 ms/op
+Iteration   3: 9645.525 ms/op
+Iteration   4: 9732.439 ms/op
+Iteration   5: 10774.838 ms/op
+Iteration   6: 9817.653 ms/op
+Iteration   7: 10211.031 ms/op
+Iteration   8: 10276.145 ms/op
+Iteration   9: 10669.779 ms/op
+Iteration  10: 10210.172 ms/op
+
+# Run progress: 32.50% complete, ETA 00:24:09
+# Fork: 4 of 5
+objc[51092]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 10185.378 ms/op
+# Warmup Iteration   2: 9687.490 ms/op
+# Warmup Iteration   3: 9167.839 ms/op
+# Warmup Iteration   4: 9815.303 ms/op
+# Warmup Iteration   5: 9537.854 ms/op
+Iteration   1: 9944.840 ms/op
+Iteration   2: 9231.467 ms/op
+Iteration   3: 9710.899 ms/op
+Iteration   4: 9426.838 ms/op
+Iteration   5: 9594.903 ms/op
+Iteration   6: 9821.058 ms/op
+Iteration   7: 9866.242 ms/op
+Iteration   8: 9572.449 ms/op
+Iteration   9: 9778.178 ms/op
+Iteration  10: 9551.739 ms/op
+
+# Run progress: 35.00% complete, ETA 00:26:07
+# Fork: 5 of 5
+objc[51094]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 10176.072 ms/op
+# Warmup Iteration   2: 9376.042 ms/op
+# Warmup Iteration   3: 9951.644 ms/op
+# Warmup Iteration   4: 9922.341 ms/op
+# Warmup Iteration   5: 9656.682 ms/op
+Iteration   1: 9836.972 ms/op
+Iteration   2: 9605.021 ms/op
+Iteration   3: 9355.187 ms/op
+Iteration   4: 9783.170 ms/op
+Iteration   5: 10166.754 ms/op
+Iteration   6: 9757.855 ms/op
+Iteration   7: 9867.507 ms/op
+Iteration   8: 9886.465 ms/op
+Iteration   9: 9860.131 ms/op
+Iteration  10: 9855.705 ms/op
+
+
+Result "com.github.vy.fibertest.JavaThreadRingBenchmark.ringBenchmark":
+  9803.600 ±(99.9%) 177.944 ms/op [Average]
+  (min, avg, max) = (8971.584, 9803.600, 10861.218), stdev = 359.456
+  CI (99.9%): [9625.655, 9981.544] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_102, VM 25.102-b14
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java
+# VM options: -XX:+TieredCompilation -XX:+AggressiveOpts -DworkerCount=503 -DringSize=1000000 -javaagent:./target/agents/quasar-core.jar
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.vy.fibertest.QuasarActorRingBenchmark.ringBenchmark
+
+# Run progress: 37.50% complete, ETA 00:27:33
+# Fork: 1 of 5
+objc[51095]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 23:48:13.578 [com.github.vy.fibertest.QuasarActorRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG c.p.actors.ActorLoader - currentClassFor com.github.vy.fibertest.QuasarActorRingBenchmark$InternalActor - null null
+4209.948 ms/op
+# Warmup Iteration   2: 3114.845 ms/op
+# Warmup Iteration   3: 2531.077 ms/op
+# Warmup Iteration   4: 2343.197 ms/op
+# Warmup Iteration   5: 2177.176 ms/op
+Iteration   1: 2383.897 ms/op
+Iteration   2: 2468.986 ms/op
+Iteration   3: 2439.971 ms/op
+Iteration   4: 3001.376 ms/op
+Iteration   5: 2490.787 ms/op
+Iteration   6: 2327.986 ms/op
+Iteration   7: 2521.468 ms/op
+Iteration   8: 2591.419 ms/op
+Iteration   9: 2551.161 ms/op
+Iteration  10: 2389.121 ms/op
+
+# Run progress: 40.00% complete, ETA 00:25:49
+# Fork: 2 of 5
+objc[51096]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 23:48:53.935 [com.github.vy.fibertest.QuasarActorRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG c.p.actors.ActorLoader - currentClassFor com.github.vy.fibertest.QuasarActorRingBenchmark$InternalActor - null null
+4374.932 ms/op
+# Warmup Iteration   2: 2913.086 ms/op
+# Warmup Iteration   3: 2780.981 ms/op
+# Warmup Iteration   4: 3015.503 ms/op
+# Warmup Iteration   5: 2717.763 ms/op
+Iteration   1: 2916.571 ms/op
+Iteration   2: 3047.567 ms/op
+Iteration   3: 2532.608 ms/op
+Iteration   4: 2774.038 ms/op
+Iteration   5: 3122.043 ms/op
+Iteration   6: 3012.451 ms/op
+Iteration   7: 2801.395 ms/op
+Iteration   8: 2773.413 ms/op
+Iteration   9: 2373.510 ms/op
+Iteration  10: 2831.277 ms/op
+
+# Run progress: 42.50% complete, ETA 00:24:17
+# Fork: 3 of 5
+objc[51100]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 23:49:38.801 [com.github.vy.fibertest.QuasarActorRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG c.p.actors.ActorLoader - currentClassFor com.github.vy.fibertest.QuasarActorRingBenchmark$InternalActor - null null
+4175.092 ms/op
+# Warmup Iteration   2: 3215.576 ms/op
+# Warmup Iteration   3: 2911.311 ms/op
+# Warmup Iteration   4: 2630.910 ms/op
+# Warmup Iteration   5: 2720.155 ms/op
+Iteration   1: 2543.033 ms/op
+Iteration   2: 2443.786 ms/op
+Iteration   3: 2762.740 ms/op
+Iteration   4: 2998.021 ms/op
+Iteration   5: 2926.680 ms/op
+Iteration   6: 2533.353 ms/op
+Iteration   7: 2467.112 ms/op
+Iteration   8: 2546.818 ms/op
+Iteration   9: 2828.359 ms/op
+Iteration  10: 2550.433 ms/op
+
+# Run progress: 45.00% complete, ETA 00:22:49
+# Fork: 4 of 5
+objc[51108]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 23:50:22.272 [com.github.vy.fibertest.QuasarActorRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG c.p.actors.ActorLoader - currentClassFor com.github.vy.fibertest.QuasarActorRingBenchmark$InternalActor - null null
+4336.702 ms/op
+# Warmup Iteration   2: 3304.972 ms/op
+# Warmup Iteration   3: 3141.726 ms/op
+# Warmup Iteration   4: 2774.373 ms/op
+# Warmup Iteration   5: 3319.319 ms/op
+Iteration   1: 2939.169 ms/op
+Iteration   2: 2806.395 ms/op
+Iteration   3: 2462.628 ms/op
+Iteration   4: 2819.260 ms/op
+Iteration   5: 2490.658 ms/op
+Iteration   6: 2278.064 ms/op
+Iteration   7: 2584.336 ms/op
+Iteration   8: 2313.444 ms/op
+Iteration   9: 2614.627 ms/op
+Iteration  10: 2486.220 ms/op
+
+# Run progress: 47.50% complete, ETA 00:21:27
+# Fork: 5 of 5
+objc[51109]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 23:51:05.754 [com.github.vy.fibertest.QuasarActorRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG c.p.actors.ActorLoader - currentClassFor com.github.vy.fibertest.QuasarActorRingBenchmark$InternalActor - null null
+4399.234 ms/op
+# Warmup Iteration   2: 3263.484 ms/op
+# Warmup Iteration   3: 3072.063 ms/op
+# Warmup Iteration   4: 2700.794 ms/op
+# Warmup Iteration   5: 2425.739 ms/op
+Iteration   1: 2758.631 ms/op
+Iteration   2: 2420.852 ms/op
+Iteration   3: 3150.725 ms/op
+Iteration   4: 2762.159 ms/op
+Iteration   5: 3162.694 ms/op
+Iteration   6: 3052.328 ms/op
+Iteration   7: 2419.654 ms/op
+Iteration   8: 2715.288 ms/op
+Iteration   9: 2695.605 ms/op
+Iteration  10: 3024.220 ms/op
+
+
+Result "com.github.vy.fibertest.QuasarActorRingBenchmark.ringBenchmark":
+  2678.167 ±(99.9%) 122.796 ms/op [Average]
+  (min, avg, max) = (2278.064, 2678.167, 3162.694), stdev = 248.054
+  CI (99.9%): [2555.370, 2800.963] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_102, VM 25.102-b14
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java
+# VM options: -XX:+TieredCompilation -XX:+AggressiveOpts -DworkerCount=503 -DringSize=1000000 -javaagent:./target/agents/quasar-core.jar
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.vy.fibertest.QuasarChannelRingBenchmark.ringBenchmark
+
+# Run progress: 50.00% complete, ETA 00:20:09
+# Fork: 1 of 5
+objc[51110]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 3220.636 ms/op
+# Warmup Iteration   2: 2672.553 ms/op
+# Warmup Iteration   3: 1893.872 ms/op
+# Warmup Iteration   4: 1857.466 ms/op
+# Warmup Iteration   5: 2348.073 ms/op
+Iteration   1: 1801.670 ms/op
+Iteration   2: 2434.073 ms/op
+Iteration   3: 2283.877 ms/op
+Iteration   4: 1714.732 ms/op
+Iteration   5: 1751.232 ms/op
+Iteration   6: 2027.844 ms/op
+Iteration   7: 1975.959 ms/op
+Iteration   8: 2038.755 ms/op
+Iteration   9: 1686.375 ms/op
+Iteration  10: 1762.848 ms/op
+
+# Run progress: 52.50% complete, ETA 00:18:43
+# Fork: 2 of 5
+objc[51111]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 3174.860 ms/op
+# Warmup Iteration   2: 2468.612 ms/op
+# Warmup Iteration   3: 2187.203 ms/op
+# Warmup Iteration   4: 2274.725 ms/op
+# Warmup Iteration   5: 2258.149 ms/op
+Iteration   1: 2243.084 ms/op
+Iteration   2: 2166.313 ms/op
+Iteration   3: 2254.792 ms/op
+Iteration   4: 2338.697 ms/op
+Iteration   5: 2208.908 ms/op
+Iteration   6: 2414.739 ms/op
+Iteration   7: 2028.428 ms/op
+Iteration   8: 2425.750 ms/op
+Iteration   9: 2634.551 ms/op
+Iteration  10: 2088.067 ms/op
+
+# Run progress: 55.00% complete, ETA 00:17:25
+# Fork: 3 of 5
+objc[51112]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 3570.274 ms/op
+# Warmup Iteration   2: 2248.379 ms/op
+# Warmup Iteration   3: 1862.469 ms/op
+# Warmup Iteration   4: 1906.496 ms/op
+# Warmup Iteration   5: 2098.599 ms/op
+Iteration   1: 1986.530 ms/op
+Iteration   2: 1905.541 ms/op
+Iteration   3: 1915.398 ms/op
+Iteration   4: 1845.919 ms/op
+Iteration   5: 2078.941 ms/op
+Iteration   6: 1860.811 ms/op
+Iteration   7: 2229.447 ms/op
+Iteration   8: 1680.591 ms/op
+Iteration   9: 1817.313 ms/op
+Iteration  10: 1828.014 ms/op
+
+# Run progress: 57.50% complete, ETA 00:16:08
+# Fork: 4 of 5
+objc[51113]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 3088.844 ms/op
+# Warmup Iteration   2: 2462.922 ms/op
+# Warmup Iteration   3: 2058.033 ms/op
+# Warmup Iteration   4: 1816.500 ms/op
+# Warmup Iteration   5: 1902.257 ms/op
+Iteration   1: 1748.827 ms/op
+Iteration   2: 2131.250 ms/op
+Iteration   3: 2003.473 ms/op
+Iteration   4: 2113.744 ms/op
+Iteration   5: 2033.013 ms/op
+Iteration   6: 2414.888 ms/op
+Iteration   7: 2097.488 ms/op
+Iteration   8: 2259.277 ms/op
+Iteration   9: 1878.708 ms/op
+Iteration  10: 1891.405 ms/op
+
+# Run progress: 60.00% complete, ETA 00:14:55
+# Fork: 5 of 5
+objc[51114]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 3359.772 ms/op
+# Warmup Iteration   2: 2427.596 ms/op
+# Warmup Iteration   3: 2346.197 ms/op
+# Warmup Iteration   4: 2726.764 ms/op
+# Warmup Iteration   5: 2481.735 ms/op
+Iteration   1: 2707.471 ms/op
+Iteration   2: 2193.873 ms/op
+Iteration   3: 2135.661 ms/op
+Iteration   4: 2200.098 ms/op
+Iteration   5: 2166.188 ms/op
+Iteration   6: 2295.088 ms/op
+Iteration   7: 2458.828 ms/op
+Iteration   8: 2463.006 ms/op
+Iteration   9: 2168.400 ms/op
+Iteration  10: 2190.712 ms/op
+
+
+Result "com.github.vy.fibertest.QuasarChannelRingBenchmark.ringBenchmark":
+  2099.612 ±(99.9%) 123.330 ms/op [Average]
+  (min, avg, max) = (1680.591, 2099.612, 2707.471), stdev = 249.132
+  CI (99.9%): [1976.282, 2222.942] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_102, VM 25.102-b14
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java
+# VM options: -XX:+TieredCompilation -XX:+AggressiveOpts -DworkerCount=503 -DringSize=1000000 -javaagent:./target/agents/quasar-core.jar
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.vy.fibertest.QuasarDataflowRingBenchmark.ringBenchmark
+
+# Run progress: 62.50% complete, ETA 00:13:47
+# Fork: 1 of 5
+objc[51116]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 3349.263 ms/op
+# Warmup Iteration   2: 3110.981 ms/op
+# Warmup Iteration   3: 2540.746 ms/op
+# Warmup Iteration   4: 2773.186 ms/op
+# Warmup Iteration   5: 2154.608 ms/op
+Iteration   1: 2197.856 ms/op
+Iteration   2: 2017.332 ms/op
+Iteration   3: 1997.883 ms/op
+Iteration   4: 1985.975 ms/op
+Iteration   5: 2529.963 ms/op
+Iteration   6: 2569.931 ms/op
+Iteration   7: 2771.995 ms/op
+Iteration   8: 2282.441 ms/op
+Iteration   9: 2718.293 ms/op
+Iteration  10: 2158.709 ms/op
+
+# Run progress: 65.00% complete, ETA 00:12:43
+# Fork: 2 of 5
+objc[51121]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 3936.394 ms/op
+# Warmup Iteration   2: 2741.410 ms/op
+# Warmup Iteration   3: 2445.580 ms/op
+# Warmup Iteration   4: 2008.600 ms/op
+# Warmup Iteration   5: 1996.721 ms/op
+Iteration   1: 2019.473 ms/op
+Iteration   2: 2003.503 ms/op
+Iteration   3: 2037.226 ms/op
+Iteration   4: 2037.928 ms/op
+Iteration   5: 1994.424 ms/op
+Iteration   6: 2445.175 ms/op
+Iteration   7: 2014.364 ms/op
+Iteration   8: 2382.034 ms/op
+Iteration   9: 2239.852 ms/op
+Iteration  10: 2896.057 ms/op
+
+# Run progress: 67.50% complete, ETA 00:11:40
+# Fork: 3 of 5
+objc[51122]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 3212.841 ms/op
+# Warmup Iteration   2: 2720.844 ms/op
+# Warmup Iteration   3: 2568.992 ms/op
+# Warmup Iteration   4: 2340.578 ms/op
+# Warmup Iteration   5: 2486.874 ms/op
+Iteration   1: 2515.033 ms/op
+Iteration   2: 2097.489 ms/op
+Iteration   3: 2084.497 ms/op
+Iteration   4: 1888.317 ms/op
+Iteration   5: 2066.957 ms/op
+Iteration   6: 2231.482 ms/op
+Iteration   7: 2227.739 ms/op
+Iteration   8: 1959.637 ms/op
+Iteration   9: 2184.874 ms/op
+Iteration  10: 1997.431 ms/op
+
+# Run progress: 70.00% complete, ETA 00:10:38
+# Fork: 4 of 5
+objc[51133]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 3700.371 ms/op
+# Warmup Iteration   2: 2866.142 ms/op
+# Warmup Iteration   3: 2147.384 ms/op
+# Warmup Iteration   4: 2122.196 ms/op
+# Warmup Iteration   5: 2112.321 ms/op
+Iteration   1: 2599.477 ms/op
+Iteration   2: 2117.747 ms/op
+Iteration   3: 2557.286 ms/op
+Iteration   4: 2660.382 ms/op
+Iteration   5: 2389.267 ms/op
+Iteration   6: 2387.178 ms/op
+Iteration   7: 2416.995 ms/op
+Iteration   8: 2361.272 ms/op
+Iteration   9: 2979.768 ms/op
+Iteration  10: 2103.407 ms/op
+
+# Run progress: 72.50% complete, ETA 00:09:39
+# Fork: 5 of 5
+objc[51134]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 3986.280 ms/op
+# Warmup Iteration   2: 2952.781 ms/op
+# Warmup Iteration   3: 2315.871 ms/op
+# Warmup Iteration   4: 2547.549 ms/op
+# Warmup Iteration   5: 2924.454 ms/op
+Iteration   1: 2534.924 ms/op
+Iteration   2: 2178.820 ms/op
+Iteration   3: 2466.146 ms/op
+Iteration   4: 2167.403 ms/op
+Iteration   5: 2342.401 ms/op
+Iteration   6: 3022.329 ms/op
+Iteration   7: 2376.645 ms/op
+Iteration   8: 2421.206 ms/op
+Iteration   9: 2079.731 ms/op
+Iteration  10: 2116.557 ms/op
+
+
+Result "com.github.vy.fibertest.QuasarDataflowRingBenchmark.ringBenchmark":
+  2296.656 ±(99.9%) 139.150 ms/op [Average]
+  (min, avg, max) = (1888.317, 2296.656, 3022.329), stdev = 281.090
+  CI (99.9%): [2157.506, 2435.806] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_102, VM 25.102-b14
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java
+# VM options: -XX:+TieredCompilation -XX:+AggressiveOpts -DworkerCount=503 -DringSize=1000000 -javaagent:./target/agents/quasar-core.jar
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.vy.fibertest.QuasarFiberRingBenchmark.ringBenchmark
+
+# Run progress: 75.00% complete, ETA 00:08:42
+# Fork: 1 of 5
+objc[51135]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 2038.686 ms/op
+# Warmup Iteration   2: 1035.450 ms/op
+# Warmup Iteration   3: 724.663 ms/op
+# Warmup Iteration   4: 1045.046 ms/op
+# Warmup Iteration   5: 1324.832 ms/op
+Iteration   1: 1110.477 ms/op
+Iteration   2: 963.938 ms/op
+Iteration   3: 1087.328 ms/op
+Iteration   4: 878.390 ms/op
+Iteration   5: 758.600 ms/op
+Iteration   6: 1066.851 ms/op
+Iteration   7: 1353.793 ms/op
+Iteration   8: 877.719 ms/op
+Iteration   9: 739.659 ms/op
+Iteration  10: 735.207 ms/op
+
+# Run progress: 77.50% complete, ETA 00:07:41
+# Fork: 2 of 5
+objc[51136]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 1632.552 ms/op
+# Warmup Iteration   2: 1126.633 ms/op
+# Warmup Iteration   3: 1112.133 ms/op
+# Warmup Iteration   4: 857.641 ms/op
+# Warmup Iteration   5: 954.713 ms/op
+Iteration   1: 900.652 ms/op
+Iteration   2: 829.045 ms/op
+Iteration   3: 1094.653 ms/op
+Iteration   4: 871.896 ms/op
+Iteration   5: 1027.731 ms/op
+Iteration   6: 1327.655 ms/op
+Iteration   7: 1006.770 ms/op
+Iteration   8: 816.870 ms/op
+Iteration   9: 830.492 ms/op
+Iteration  10: 1025.064 ms/op
+
+# Run progress: 80.00% complete, ETA 00:06:43
+# Fork: 3 of 5
+objc[51137]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 1507.664 ms/op
+# Warmup Iteration   2: 1386.358 ms/op
+# Warmup Iteration   3: 699.788 ms/op
+# Warmup Iteration   4: 690.211 ms/op
+# Warmup Iteration   5: 681.190 ms/op
+Iteration   1: 825.194 ms/op
+Iteration   2: 870.524 ms/op
+Iteration   3: 1604.625 ms/op
+Iteration   4: 1074.464 ms/op
+Iteration   5: 807.107 ms/op
+Iteration   6: 688.246 ms/op
+Iteration   7: 692.683 ms/op
+Iteration   8: 694.770 ms/op
+Iteration   9: 692.938 ms/op
+Iteration  10: 698.636 ms/op
+
+# Run progress: 82.50% complete, ETA 00:05:47
+# Fork: 4 of 5
+objc[51138]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 1954.509 ms/op
+# Warmup Iteration   2: 935.934 ms/op
+# Warmup Iteration   3: 1048.976 ms/op
+# Warmup Iteration   4: 1002.303 ms/op
+# Warmup Iteration   5: 803.539 ms/op
+Iteration   1: 836.459 ms/op
+Iteration   2: 755.836 ms/op
+Iteration   3: 1298.238 ms/op
+Iteration   4: 784.622 ms/op
+Iteration   5: 819.222 ms/op
+Iteration   6: 959.670 ms/op
+Iteration   7: 738.485 ms/op
+Iteration   8: 851.449 ms/op
+Iteration   9: 1057.292 ms/op
+Iteration  10: 759.497 ms/op
+
+# Run progress: 85.00% complete, ETA 00:04:53
+# Fork: 5 of 5
+objc[51142]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 2236.712 ms/op
+# Warmup Iteration   2: 1035.107 ms/op
+# Warmup Iteration   3: 1014.600 ms/op
+# Warmup Iteration   4: 1135.358 ms/op
+# Warmup Iteration   5: 1346.377 ms/op
+Iteration   1: 1085.455 ms/op
+Iteration   2: 1077.614 ms/op
+Iteration   3: 1071.120 ms/op
+Iteration   4: 1060.097 ms/op
+Iteration   5: 1058.262 ms/op
+Iteration   6: 1249.269 ms/op
+Iteration   7: 1085.923 ms/op
+Iteration   8: 1013.986 ms/op
+Iteration   9: 901.402 ms/op
+Iteration  10: 1128.312 ms/op
+
+
+Result "com.github.vy.fibertest.QuasarFiberRingBenchmark.ringBenchmark":
+  950.884 ±(99.9%) 98.654 ms/op [Average]
+  (min, avg, max) = (688.246, 950.884, 1604.625), stdev = 199.285
+  CI (99.9%): [852.230, 1049.538] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_102, VM 25.102-b14
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java
+# VM options: -XX:+TieredCompilation -XX:+AggressiveOpts -DworkerCount=503 -DringSize=1000000 -javaagent:./target/agents/quasar-core.jar
+# Warmup: 5 iterations, 1 s each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark
+
+# Run progress: 87.50% complete, ETA 00:04:00
+# Fork: 1 of 5
+objc[51143]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 23:59:44.918 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.u.i.l.InternalLoggerFactory - Using SLF4J as the default logging framework
+23:59:44.929 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+23:59:44.963 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.c.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 8
+23:59:44.984 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+23:59:44.984 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+23:59:44.984 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+23:59:44.985 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+23:59:44.986 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - Java version: 8
+23:59:44.986 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+23:59:44.986 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - sun.misc.Unsafe: available
+23:59:44.986 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+23:59:44.988 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - Javassist: unavailable
+23:59:44.988 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+23:59:44.988 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.tmpdir: /var/folders/z0/9wb0gcgs3n1c163m9rn1drd00000gn/T (java.io.tmpdir)
+23:59:44.989 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+23:59:44.989 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+23:59:45.047 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+23:59:45.047 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+10371.272 ms/op
+# Warmup Iteration   2: 8693.448 ms/op
+# Warmup Iteration   3: 8878.177 ms/op
+# Warmup Iteration   4: 9698.206 ms/op
+# Warmup Iteration   5: 9360.979 ms/op
+Iteration   1: 8948.497 ms/op
+Iteration   2: 8954.769 ms/op
+Iteration   3: 8961.905 ms/op
+Iteration   4: 8658.853 ms/op
+Iteration   5: 8843.900 ms/op
+Iteration   6: 8955.344 ms/op
+Iteration   7: 8547.791 ms/op
+Iteration   8: 9052.111 ms/op
+Iteration   9: 9267.789 ms/op
+Iteration  10: 9366.044 ms/op
+
+# Run progress: 90.00% complete, ETA 00:03:22
+# Fork: 2 of 5
+objc[51144]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 00:02:02.995 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.u.i.l.InternalLoggerFactory - Using SLF4J as the default logging framework
+00:02:03.007 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+00:02:03.047 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.c.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 8
+00:02:03.080 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+00:02:03.080 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+00:02:03.081 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+00:02:03.081 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+00:02:03.082 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - Java version: 8
+00:02:03.082 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+00:02:03.083 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - sun.misc.Unsafe: available
+00:02:03.083 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+00:02:03.085 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - Javassist: unavailable
+00:02:03.085 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+00:02:03.086 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.tmpdir: /var/folders/z0/9wb0gcgs3n1c163m9rn1drd00000gn/T (java.io.tmpdir)
+00:02:03.087 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+00:02:03.087 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+00:02:03.150 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+00:02:03.150 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+10828.208 ms/op
+# Warmup Iteration   2: 9982.332 ms/op
+# Warmup Iteration   3: 9386.513 ms/op
+# Warmup Iteration   4: 9153.139 ms/op
+# Warmup Iteration   5: 9263.750 ms/op
+Iteration   1: 9347.877 ms/op
+Iteration   2: 8941.937 ms/op
+Iteration   3: 9454.075 ms/op
+Iteration   4: 9649.724 ms/op
+Iteration   5: 9540.875 ms/op
+Iteration   6: 9355.885 ms/op
+Iteration   7: 9595.447 ms/op
+Iteration   8: 9564.116 ms/op
+Iteration   9: 9775.677 ms/op
+Iteration  10: 9673.800 ms/op
+
+# Run progress: 92.50% complete, ETA 00:02:39
+# Fork: 3 of 5
+objc[51162]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 00:04:28.188 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.u.i.l.InternalLoggerFactory - Using SLF4J as the default logging framework
+00:04:28.219 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+00:04:28.260 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.c.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 8
+00:04:28.284 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+00:04:28.284 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+00:04:28.284 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+00:04:28.285 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+00:04:28.286 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - Java version: 8
+00:04:28.286 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+00:04:28.289 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - sun.misc.Unsafe: available
+00:04:28.290 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+00:04:28.292 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - Javassist: unavailable
+00:04:28.292 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+00:04:28.293 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.tmpdir: /var/folders/z0/9wb0gcgs3n1c163m9rn1drd00000gn/T (java.io.tmpdir)
+00:04:28.295 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+00:04:28.296 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+00:04:28.359 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+00:04:28.360 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+11566.474 ms/op
+# Warmup Iteration   2: 9821.076 ms/op
+# Warmup Iteration   3: 9261.156 ms/op
+# Warmup Iteration   4: 9452.815 ms/op
+# Warmup Iteration   5: 9489.031 ms/op
+Iteration   1: 9248.633 ms/op
+Iteration   2: 9156.111 ms/op
+Iteration   3: 9273.111 ms/op
+Iteration   4: 9368.169 ms/op
+Iteration   5: 9491.060 ms/op
+Iteration   6: 9269.772 ms/op
+Iteration   7: 9546.788 ms/op
+Iteration   8: 8847.296 ms/op
+Iteration   9: 9431.993 ms/op
+Iteration  10: 9439.998 ms/op
+
+# Run progress: 95.00% complete, ETA 00:01:51
+# Fork: 4 of 5
+objc[51174]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 00:06:52.341 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.u.i.l.InternalLoggerFactory - Using SLF4J as the default logging framework
+00:06:52.352 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+00:06:52.388 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.c.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 8
+00:06:52.413 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+00:06:52.414 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+00:06:52.414 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+00:06:52.415 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+00:06:52.415 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - Java version: 8
+00:06:52.415 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+00:06:52.416 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - sun.misc.Unsafe: available
+00:06:52.416 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+00:06:52.417 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - Javassist: unavailable
+00:06:52.418 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+00:06:52.418 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.tmpdir: /var/folders/z0/9wb0gcgs3n1c163m9rn1drd00000gn/T (java.io.tmpdir)
+00:06:52.419 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+00:06:52.419 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+00:06:52.476 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+00:06:52.476 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+10480.198 ms/op
+# Warmup Iteration   2: 8680.688 ms/op
+# Warmup Iteration   3: 8662.242 ms/op
+# Warmup Iteration   4: 9591.549 ms/op
+# Warmup Iteration   5: 9359.050 ms/op
+Iteration   1: 9245.464 ms/op
+Iteration   2: 9249.118 ms/op
+Iteration   3: 8839.301 ms/op
+Iteration   4: 8836.487 ms/op
+Iteration   5: 9233.712 ms/op
+Iteration   6: 8832.037 ms/op
+Iteration   7: 9417.121 ms/op
+Iteration   8: 8737.545 ms/op
+Iteration   9: 9707.307 ms/op
+Iteration  10: 9066.699 ms/op
+
+# Run progress: 97.50% complete, ETA 00:00:57
+# Fork: 5 of 5
+objc[51176]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+# Warmup Iteration   1: 00:09:11.941 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.u.i.l.InternalLoggerFactory - Using SLF4J as the default logging framework
+00:09:11.956 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+00:09:12.001 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.c.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 8
+00:09:12.032 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+00:09:12.033 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+00:09:12.033 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+00:09:12.034 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+00:09:12.034 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - Java version: 8
+00:09:12.035 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+00:09:12.035 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - sun.misc.Unsafe: available
+00:09:12.039 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+00:09:12.041 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - Javassist: unavailable
+00:09:12.041 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+00:09:12.042 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.tmpdir: /var/folders/z0/9wb0gcgs3n1c163m9rn1drd00000gn/T (java.io.tmpdir)
+00:09:12.043 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+00:09:12.043 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG i.n.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+00:09:12.104 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+00:09:12.104 [com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark-jmh-worker-1] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+11340.441 ms/op
+# Warmup Iteration   2: 9076.395 ms/op
+# Warmup Iteration   3: 9263.532 ms/op
+# Warmup Iteration   4: 9163.376 ms/op
+# Warmup Iteration   5: 9749.853 ms/op
+Iteration   1: 9470.499 ms/op
+Iteration   2: 9349.319 ms/op
+Iteration   3: 8844.260 ms/op
+Iteration   4: 9244.017 ms/op
+Iteration   5: 9052.182 ms/op
+Iteration   6: 9345.674 ms/op
+Iteration   7: 9660.154 ms/op
+Iteration   8: 9958.478 ms/op
+Iteration   9: 9544.143 ms/op
+Iteration  10: 9350.474 ms/op
+
+
+Result "com.github.vy.fibertest.VertxRingBenchmark.ringBenchmark":
+  9250.267 ±(99.9%) 157.681 ms/op [Average]
+  (min, avg, max) = (8547.791, 9250.267, 9958.478), stdev = 318.523
+  CI (99.9%): [9092.586, 9407.947] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:39:54
+
+Benchmark                                  Mode  Cnt     Score     Error  Units
+AkkaActorRingBenchmark.ringBenchmark       avgt   50   657.889 ±  23.338  ms/op
+EtaFiberRingBenchmark.ringBenchmark        avgt   50   949.181 ±  51.674  ms/op
+JavaThreadRingBenchmark.ringBenchmark      avgt   50  9803.600 ± 177.944  ms/op
+QuasarActorRingBenchmark.ringBenchmark     avgt   50  2678.167 ± 122.796  ms/op
+QuasarChannelRingBenchmark.ringBenchmark   avgt   50  2099.612 ± 123.330  ms/op
+QuasarDataflowRingBenchmark.ringBenchmark  avgt   50  2296.656 ± 139.150  ms/op
+QuasarFiberRingBenchmark.ringBenchmark     avgt   50   950.884 ±  98.654  ms/op
+VertxRingBenchmark.ringBenchmark           avgt   50  9250.267 ± 157.681  ms/op
