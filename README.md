@@ -1,11 +1,9 @@
 # Eta Fibers Talk Slides
 
+Rendered:
+https://rahulmutt.github.io/slides/fuconf17-eta-fibers/slides.html
+
 This repository contains the slides for my talk at Functional Conf 2017 about Eta Fibers. Built from [Remark.js](https://github.com/gnab/remark).
-
-# Website
-You can view the rendered version of the slides here:
-
-(https://rahulmutt.github.io/slides/fuconf17-eta-fibers/slides.html)
 
 ## Folders
 
